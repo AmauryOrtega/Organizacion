@@ -27,13 +27,6 @@ void loop(){
   delay(500);
 }
 
-void leerAO(){
-  float lectura = analogRead(A0);
-  float humedad = map(lectura, 0, 1023, 100, 0);
-  Serial.print("A0:");Serial.println(lectura);
-  Serial.print("Humedad: ");Serial.print(humedad);Serial.println("%");
-}
-
 void ADCLeer(unsigned int pin){
   Serial.print("ADC Lectura en ");
   Serial.println(pin);
