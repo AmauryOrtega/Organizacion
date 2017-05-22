@@ -53,5 +53,11 @@ int valorPin(unsigned int pin){
     Wire.endTransmission();
     Wire.requestFrom(PCF8591, 2);
     Wire.read();  // Se omite el primero porque es el valor anterior
-    return Wire.read();
+    int valor = (int) Wire.read();
+    if(valor < 120){
+        return 100;
+    }else{
+        valor = map(valor, 120, 255, 100, 0);
+    }
+    return valor;
 }
