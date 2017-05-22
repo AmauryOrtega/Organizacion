@@ -17,8 +17,10 @@ package charts;
 import Arduino.Arduino;
 import gnu.io.SerialPortEvent;
 import gnu.io.SerialPortEventListener;
+import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class Window extends javax.swing.JFrame {
 
@@ -38,6 +40,39 @@ public class Window extends javax.swing.JFrame {
                 jLabelPlanta3.setText(planta3 + "%");
                 int planta4 = Integer.parseInt(data_separada[3]);
                 jLabelPlanta4.setText(planta4 + "%");
+                
+                //Alerta en planta 1
+                if(planta1 < 10){
+                    jLabelPlanta1.setForeground(Color.red);
+                }else if(planta1 > 90){
+                    jLabelPlanta1.setForeground(Color.red);
+                }else{
+                    jLabelPlanta1.setForeground(Color.black);
+                }
+                //Alerta en planta 2
+                if(planta2 < 10){
+                    jLabelPlanta2.setForeground(Color.red);
+                }else if(planta2 > 90){
+                    jLabelPlanta2.setForeground(Color.red);
+                }else{
+                    jLabelPlanta2.setForeground(Color.black);
+                }
+                //Alerta en planta 3
+                if(planta3 < 10){
+                    jLabelPlanta3.setForeground(Color.red);
+                }else if(planta3 > 90){
+                    jLabelPlanta3.setForeground(Color.red);
+                }else{
+                    jLabelPlanta3.setForeground(Color.black);
+                }
+                //Alerta en planta 4
+                if(planta4 < 10){
+                    jLabelPlanta4.setForeground(Color.red);
+                }else if(planta4 > 90){
+                    jLabelPlanta4.setForeground(Color.red);
+                }else{
+                    jLabelPlanta4.setForeground(Color.black);
+                }
             }
         }
     };
